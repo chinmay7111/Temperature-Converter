@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Temperature Converter</title>
+  </head>
+  <body>
+    <section class="heading">
+      <div id="head">
+        <h3>Temperature Converter</h3>
+      </div>
+    </section>
+    <section class="coverter">
+      <div id="temp">
+        <div class="inpu">
+            <label for="">Celsius</label>
+          <input
+            class="input"
+            id="celsius"
+            type="number"
+            placeholder="Enter Celsius"
+            name=""
+            id=""
+            oninput="celToFar()"
+          />
+        </div>
+        
+        <div class="Fahrenheit">
+            <label for="">Fahrenheit</label>
+
+          <input
+            class="input"
+            id="fahrenheit"
+            type="number"
+            placeholder=" Fahrenheit "
+            name=""
+            id=""
+            oninput="farToCel()"
+          />
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let celsius = document.getElementById("celsius");
+      let fahrenheit = document.getElementById("fahrenheit");
+      function celToFar() {
+        let output = (parseFloat(celsius.value) * 9) / 5 + 32;
+        fahrenheit.value = parseFloat(output.toFixed(2));
+      }
+      function farToCel() {
+        let output = ((parseFloat(fahrenheit.value) - 32) * 5) / 9;
+        celsius.value = parseFloat(output.toFixed(2));
+        console.log(output);
+      }
+    </script>
+  </body>
+</html>
